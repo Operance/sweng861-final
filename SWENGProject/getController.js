@@ -7,8 +7,8 @@ import { response } from "express";
 
 async function getSpotifyAccessToken() { //POST request to Spotify to obtain access token, neccessary to make requests.
   const tokenUrl = 'https://accounts.spotify.com/api/token';
-  const clientId = "8ea13533e8bd4b11922983d079fb43f5";
-  const clientSecret = "19cbcdd4ab61482ab2df32ecdd1cd926";
+  const clientId = "";
+  const clientSecret = ""; 
 
   try {
     const response = await axios({
