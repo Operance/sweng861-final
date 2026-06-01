@@ -1,0 +1,37 @@
+pipeline:
+  name: Test-Build
+  identifier: TestBuild
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Build
+        identifier: Build
+        type: CI
+        spec:
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Install dependencies
+                  identifier: Install_Dependencies
+                  spec:
+                    shell: Sh
+                    command: |
+                      cd SWENGProject
+                      npm ci
+              - step:
+                  type: Run
+                  name: Build
+                  identifier: Build
+                  spec:
+                    shell: Sh
+                    command: |
+                      npm run build
