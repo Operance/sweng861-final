@@ -4,6 +4,12 @@ pipeline:
   projectIdentifier: default_project
   orgIdentifier: default
   tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: GitConnector
+        repoName: sweng861-final
+        build: <+input>
   stages:
     - stage:
         name: Build
